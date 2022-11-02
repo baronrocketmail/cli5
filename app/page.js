@@ -38,7 +38,7 @@ export default async function Page(){
     for (let elem in menuLinksObjArray){
         navLinks.push(
                 <div>
-                    <Link key={props.objArray[elem].url} href={props.objArray[elem].url}>{props.objArray[elem].name}</Link>
+                    <Link key={menuLinksObjArray[elem].url} href={menuLinksObjArray[elem].url}>{menuLinksObjArray[elem].name}</Link>
                     <br/>
                 </div>
                 )
