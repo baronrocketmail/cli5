@@ -22,40 +22,23 @@ export default async function Page(){
     const applicationsOpen = await getApplicationsOpen()
     const unpaid = await getUnpaid()
 
-//    let menuLinksObjArray = [{name: name, url: "/"}]
-//
-//    if (applicationsOpen) {
-//        menuLinksObjArray.push({name: "apply now", url:"/log"})
-//        menuLinksObjArray.push({name: "view lease", url:"/viewlease"})
-//        menuLinksObjArray.push({name: "..." ,url: "/explainer"})
-//    } else {
-//        menuLinksObjArray.push({name: "autopay", url:"/autopay"})
-//        menuLinksObjArray.push(...unpaid)
-//        menuLinksObjArray.push({name: "...", url:"/log"})
-//    }
+    let menuLinksObjArray = [{name: name, url: "/"}]
+
+    if (applicationsOpen) {
+        menuLinksObjArray.push({name: "apply now", url:"/log"})
+        menuLinksObjArray.push({name: "view lease", url:"/viewlease"})
+        menuLinksObjArray.push({name: "..." ,url: "/explainer"})
+    } else {
+        menuLinksObjArray.push({name: "autopay", url:"/autopay"})
+        menuLinksObjArray.push(...unpaid)
+        menuLinksObjArray.push({name: "...", url:"/log"})
+    }
 
     return(
             <div>
-                <MenuLinks objArray = {[{name: "one big family", url: "/"}]}/>
+                <h1>hu</h1>
             </div>
     )
 }
 import Link from "next/link";
 
-function MenuLinks(props){
-    //  [ {name: "" , url: "" } ]
-    let navLinks = []
-    for (let elem in props.objArray){
-        navLinks.push(
-                <div>
-                    <Link key={props.objArray[elem].url} href={props.objArray[elem].url}>{props.objArray[elem].name}</Link>
-                    <br/>
-                </div>
-                )
-    }
-    return(
-            <div className={"navlinks"}>
-                {navLinks}
-            </div>
-            )
-}
