@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 
 async function getName(){
@@ -33,12 +34,22 @@ export default async function Page(){
         menuLinksObjArray.push(...unpaid)
         menuLinksObjArray.push({name: "...", url:"/log"})
     }
+    let navLinks = []
+    for (let elem in menuLinksObjArray){
+        navLinks.push(
+                <div>
+                    <Link key={props.objArray[elem].url} href={props.objArray[elem].url}>{props.objArray[elem].name}</Link>
+                    <br/>
+                </div>
+                )
+    }
+
 
     return(
             <div>
-                <h1>hu</h1>
+                <div className={"navlinks"}>
+                    {navLinks}
+                </div>
             </div>
     )
 }
-import Link from "next/link";
-
