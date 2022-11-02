@@ -37,7 +37,7 @@ export default async function Page(){
 
     return(
             <div>
-            <MenuLinks objArray = {{name: "one big family", url: "/"}}/>
+                <MenuLinks objArray = {[{name: "one big family", url: "/"}]}/>
             </div>
     )
 }
