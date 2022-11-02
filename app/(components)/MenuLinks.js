@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function menuLinks(props){
+export default function MenuLinks(props){
     //  [ {name: "" , url: "" } ]
     let navLinks = []
     for (let elem in props.objArray){
