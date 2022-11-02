@@ -23,7 +23,7 @@ export default async function Page(){
     const applicationsOpen = await getApplicationsOpen()
     const unpaid = await getUnpaid()
 
-    let menuLinksObjArray = [{name: name, url: "/"}]
+//    let menuLinksObjArray = [{name: name, url: "/"}]
 //
 //    if (applicationsOpen) {
 //        menuLinksObjArray.push({name: "apply now", url:"/log"})
@@ -36,6 +36,8 @@ export default async function Page(){
 //    }
 
     return(
-            <MenuLinks objArray = {menuLinksObjArray}/>
+            <div>
+            <MenuLinks objArray = {{name: "one big family", url: "/"}}/>
+            </div>
     )
 }
